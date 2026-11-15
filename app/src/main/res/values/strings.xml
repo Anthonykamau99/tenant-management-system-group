@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Tenant Management</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="name">Name</string>
+    <string name="phone">Phone</string>
+    <string name="rent">Rent (KSh)</string>
+    <string name="add_tenant">Add Tenant</string>
+    <string name="view_tenants">View Tenants</string>
+    <string name="dashboard">Dashboard</string>
+    <string name="logout">Logout</string>
+    <string name="save">Save</string>
+    <string name="call">Call</string>
+    <string name="delete">Delete</string>
+    <string name="no_tenants">No tenants yet. Add one from the Dashboard.</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="go_to_register">Don\'t have an account? Register</string>
+    <string name="go_to_login">Already have an account? Login</string>
+</resources>
