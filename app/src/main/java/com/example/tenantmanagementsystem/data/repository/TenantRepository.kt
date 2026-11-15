@@ -1,28 +1,30 @@
 package com.example.tenantmanagementsystem.data.repository
 
+import androidx.lifecycle.LiveData
+import com.example.tenantmanagementsystem.data.local.TenantDao
 import com.example.tenantmanagementsystem.data.model.Tenant
 
 /**
- * In-memory repository (Stage 1 / early stages).
- * Data is lost when the app is closed.
- * Stage 5 will replace this with Room.
+ * Repository (Stage 5) — single source of truth backed by Room.
+ * ViewModels talk to the repository; the repository talks to the DAO.
  */
-object TenantRepository {
+class TenantRepository(private val tenantDao: TenantDao) {
 
-    private val _tenants = mutableListOf<Tenant>()
+    val allTenants: LiveData<List<Tenant>> = tenantDao.getAllTenants()
 
-    val tenants: List<Tenant>
-        get() = _tenants.toList()
-
-    fun addTenant(tenant: Tenant) {
-        _tenants.add(tenant)
+    suspend fun addTenant(tenant: Tenant) {
+        tenantDao.insert(tenant)
     }
 
-    fun deleteTenant(name: String) {
-        _tenants.removeAll { it.name == name }
+    suspend fun getTenantById(id: Int): Tenant? {
+        return tenantDao.getTenantById(id)
     }
 
-    fun clear() {
-        _tenants.clear()
+    suspend fun deleteTenant(id: Int) {
+        tenantDao.deleteById(id)
+    }
+
+    suspend fun deleteAll() {
+        tenantDao.deleteAll()
     }
 }
