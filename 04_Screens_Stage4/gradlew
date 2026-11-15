@@ -1,0 +1,5 @@
+#!/bin/sh
+# Simplified gradle wrapper placeholder. Prefer opening the project in Android Studio,
+# which will generate a full Gradle wrapper automatically.
+echo "Please open this project in Android Studio (File → Open) so it can sync and generate the full Gradle wrapper."
+exit 1
