@@ -1,29 +1,22 @@
-# Tenant Management System — Stage 1 (Lead)
+# Tenant Management System — Stage 2 (ViewModel)
 
-**Branch:** `main` (Lead pushes directly once)
+**Branch:** `feature/viewmodel`  
+**Waits for:** Stage 1  
+**Reviewer:** Screens member (Stage 4)
 
 ## What this stage delivers
 
-- Shared repository on GitHub
-- Code organised into **ui** and **data** packages
-- Working app with Login, Register, Dashboard, Add Tenant, View Tenants
-- In-memory `TenantRepository` (data is lost when the app closes)
-- Navigation drawer + Navigation Component
+- `TenantViewModel` in `ui.viewmodel`
+- LiveData: `tenants`, `tenantCountText`, `totalRentText`, `allTenantsText`
+- `addTenant(...)` validation + update of LiveData
+- Lifecycle logs
+- ViewModel / LiveData libraries in `build.gradle.kts`
 
-## Package structure
+## Important
 
-```
-com.example.tenantmanagementsystem
-├── ui
-│   ├── auth          LoginActivity, RegisterActivity
-│   ├── main          MainActivity
-│   ├── dashboard     DashboardFragment
-│   └── tenants       AddTenantFragment, ViewTenantsFragment, TenantAdapter
-└── data
-    ├── model         Tenant
-    └── repository    TenantRepository (in-memory)
-```
+Screens still use the old in-memory repository directly.  
+Connecting the Fragments to this ViewModel is **Stage 4**.
 
-## Next stages
+## Commit message suggestion
 
-- Stage 2 (ViewModel) and Stage 3 (Room) can start in parallel after this is merged.
+`Add TenantViewModel with LiveData and transformations`
